@@ -6,67 +6,33 @@
 #define MAX_LEN 100
 
 
-void AgregarNumero(int arr[],int number,int *currentPos){
 
+void addNumbers(int arr[],int *currentPos,int number){
+  
   arr[*currentPos]=number;
-  printf("%d",arr[*currentPos]);
-  *currentPos++;
-}
-
-void MostrarMenuPrincipal(){
-  printf("1.AgregarNumero\n");
-  printf("2.EliminarNumero\n");
-  printf("3.BuscarUnNumero\n");
-  printf("4.MostrarTodosLosNumerosInsertadosPorElMomento\n");
-
-}
-
-void limpiarConsola(){
-  system("clear");
-
+  (*currentPos)++;
+  
+ 
 }
 
 
 int main(){
   int numbers[MAX_LEN]={0};
   int currentPos=0;
-  int number=0;
-  int v=1;
-  int respuestaActual=0;
- 
-  while(v){
-
-    MostrarMenuPrincipal();
-    printf("Digite Una de las opciones disponibles:");
- 
-    scanf("%d",&respuestaActual);
-
-    switch(respuestaActual){
-      case 1:
-        limpiarConsola();	     
-        printf("Digite el numero que desea agregar");
-        scanf("%d",&number);
-        v=0
-        
-      case 2:
-	EliminarNumero();
-      case 3:
-	BuscarNumero();
-      case 4:
-	MostrarNumeros();
-	
-    }
-
- 
-
+  int num=0;
+  for (int i=0;i<3;i++){
+    scanf("%d",&num);
+    addNumbers(numbers,&currentPos,num);  
   }
-return 0;
-}
+
+   for (int i=0;i<MAX_LEN;i++){
+    printf("%d",numbers[i]);
+    
+  }
 
   
 
-
-
-
+  return 0;
+}
 
 
