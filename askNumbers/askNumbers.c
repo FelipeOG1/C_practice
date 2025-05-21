@@ -15,6 +15,14 @@ void addNumbers(int arr[],int *currentPos,int number){
  
 }
 
+void MostrarElementosHastaUltimaPos(int arr[],int *currentPos){
+  for (int i=0;i<(*currentPos);i++){
+    printf("%d",arr[i]);
+  }
+  
+}
+
+
 
 int main(){
   int numbers[MAX_LEN]={0};
@@ -25,10 +33,11 @@ int main(){
     addNumbers(numbers,&currentPos,num);  
   }
 
-   for (int i=0;i<MAX_LEN;i++){
-    printf("%d",numbers[i]);
-    
-  }
+
+  MostrarElementosHastaUltimaPos(numbers,&currentPos);
+  
+
+  
 
   
 
