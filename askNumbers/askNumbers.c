@@ -22,24 +22,53 @@ void MostrarElementosHastaUltimaPos(int arr[],int *currentPos){
   
 }
 
-
+void MainMenu(){
+  printf("1.Agregar Elemento a la lista\n");
+  printf("2.Eliminar ultimo elemento\n");
+  printf("3.Agregar Elemento a la lista\n");
+  printf("4.Encontar algun elemento por su valor\n");
+  printf("5.Encontrar multiples Elementos \n");
+  printf("6.Encontrar valor mas alto\n");
+}
 
 int main(){
   int numbers[MAX_LEN]={0};
   int currentPos=0;
   int num=0;
-  for (int i=0;i<3;i++){
-    scanf("%d",&num);
-    addNumbers(numbers,&currentPos,num);  
-  }
+  int bool=1;
+  int respuesta=0;
+ 
+  while(bool){
+    
+    MainMenu();
+    scanf("%d",&respuesta);
+    switch(respuesta){
+
+      case 1:
+        break;
+      case 2:
+        break;
+        
+      case 3:
+        break;
+        
+      case 4:
+        
+        break;
+      case 5:
+        
+
+      case 6:
+        break;
 
 
-  MostrarElementosHastaUltimaPos(numbers,&currentPos);
-  
 
-  
+      default:
+        bool=0;
+        break;
+    }
+    }
 
-  
 
   return 0;
 }
