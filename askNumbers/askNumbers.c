@@ -17,7 +17,7 @@ void addNumbers(int arr[],int *currentPos,int number){
 
 void MostrarElementosHastaUltimaPos(int arr[],int *currentPos){
   for (int i=0;i<(*currentPos);i++){
-    printf("%d",arr[i]);
+    printf("%d\n",arr[i]);
   }
   
 }
@@ -29,6 +29,7 @@ void MainMenu(){
   printf("4.Encontar algun elemento por su valor\n");
   printf("5.Encontrar multiples Elementos \n");
   printf("6.Encontrar valor mas alto\n");
+  printf("7. Mostra todos los elementos\n");
 }
 
 int main(){
@@ -37,6 +38,7 @@ int main(){
   int num=0;
   int bool=1;
   int respuesta=0;
+  char [256]=buff;
  
   while(bool){
     
@@ -45,6 +47,15 @@ int main(){
     switch(respuesta){
 
       case 1:
+        int res=0;
+        printf("Digite cuantos numeros desea agregar");
+        scanf("%d",&res);
+        getchar();
+        printf("Digite los numeros separados por un espacio");
+        fgets(&buff,res,stdin);
+
+
+        
         break;
       case 2:
         break;
@@ -62,7 +73,9 @@ int main(){
         break;
 
 
-
+      case 7:
+        MostrarElementosHastaUltimaPos(numbers,&currentPos);
+        break;
       default:
         bool=0;
         break;
