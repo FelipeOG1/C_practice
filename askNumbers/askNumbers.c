@@ -3,9 +3,10 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 #define MAX_LEN 100
 
-
+  
 
 void addNumbers(int arr[],int *currentPos,int number){
   
@@ -53,7 +54,12 @@ int main(){
         getchar();
         printf("Digite los numeros separados por un espacio");
         fgets(&buff,res,stdin);
+        
 
+        str
+        
+        
+      
 
         
         break;
