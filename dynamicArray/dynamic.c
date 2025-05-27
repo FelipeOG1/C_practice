@@ -14,13 +14,46 @@ void set(int *arr,int value,int index,int **p){
   if (&arr[index]>*p){
 
     *p=&arr[index];
-  }
-
-
-
-  
+  } 
 
 }
+
+void pushBack(int *arr,int capacity,int value,int **p){
+ 
+  int currentPos = *p - arr;
+
+  if (currentPos>=capacity){
+    printf("No se pueden agregar mas elementos luego de la posicion %d",currentPos-1);
+
+    return;
+  }
+
+    *p = *p +1;
+
+    **p = value;
+}
+
+
+int getElements(int *arr,int capa){
+  int nums[capa];
+  int j=0; 
+  for (int i=0;i<capa;i++){
+    
+    if (arr[i] !=0){
+
+      nums[j]=arr[i];
+
+      j++;
+      
+
+    }
+    
+      
+  }
+  return nums;
+
+}
+
 
 int main(){
 
@@ -28,14 +61,13 @@ int main(){
 
   int arr[capacity];
 
-  int *p=&arr[4];
+  int *p=arr -1;
 
-  printf("%p\n",(void *)p);
- 
-  set(arr,30,5,&p);
 
-  printf("%p",(void *)p);
+  
 
+
+   
 
   return 0;
 }

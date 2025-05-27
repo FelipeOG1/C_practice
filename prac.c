@@ -1,28 +1,52 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+
+typedef struct {
+  int capacity;
+  int *arr;
+  int *pointer;
+} Vector;
+
+
+Vector crearVector(int capa){
+  Vector v;
+  
+  v.capacity=capa;
+  v.arr=malloc (capa * sizeof(int));
+  v.pointer = v.arr - 1;
+
+  
+  
+  return v;
+
+}
+
+void pushBack(Vector *v,int value){
+  int diff = v->pointer - v->arr +1;
+ 
+  if (diff + 1>=v->capacity){
+    printf("nase");
+  }
+  
+  v->pointer++;
+
+  printf("%p\n",v->pointer);
+}
+
 
 
 int main(){
 
-  char buff[256];
-  int len=100;
-  
-  fgets(buff,len,stdin);
+  Vector v = crearVector(5);
+    
 
-  
-  char *token=strtok(buff," ");
-   
-  printf("%c",*token);
-  
-  
+  pushBack(&v,30);
 
-  token=strtok(NULL," ");
-  
-  printf("%s",token);
-  
-  
+  pushBack(&v,30);
 
+  pushBack(&v,30);
+
+  pushBack(&v,30);
 
 
 
