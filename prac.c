@@ -1,57 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct {
-  int capacity;
-  int *arr;
-  int *pointer;
-} Vector;
 
+typedef struct Node{
+  int value;
+  struct Node *next;
 
-Vector crearVector(int capa){
-  Vector v;
+}Node;
+
+typedef struct{
+
+  Node head;
+  Node tail;
   
-  v.capacity=capa;
-  v.arr=malloc (capa * sizeof(int));
-  v.pointer = v.arr - 1;
+}LinkedList;
 
-  
-  
-  return v;
 
+void addTotheEnd(LinkedList *lin,int val){
+  Node newNode={.value=val,.next=NULL};
+
+  lin->head.next=&newNode;
 }
-
-void pushBack(Vector *v,int value){
-  int diff = v->pointer - v->arr +1;
- 
-  if (diff + 1>=v->capacity){
-    printf("nase");
-  }
-  
-  v->pointer++;
-
-  printf("%p\n",v->pointer);
-}
-
-
 
 int main(){
+ 
 
-  Vector v = crearVector(5);
-    
-
-  pushBack(&v,30);
-
-  pushBack(&v,30);
-
-  pushBack(&v,30);
-
-  pushBack(&v,30);
+ Node Node1 = {.value = 10};
+ Node Node2={.value=20};
 
 
 
-  
 
-  
+
   return 0;
 }
