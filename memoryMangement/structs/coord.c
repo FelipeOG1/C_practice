@@ -1,6 +1,6 @@
 #include "coord.h"
 
-struct Coordinate create_coordinate(int x_value, int y_value, int z_value){
+ coordinate_t new_coord(int x_value, int y_value, int z_value){
   
   struct Coordinate c ={
 
@@ -10,3 +10,23 @@ struct Coordinate create_coordinate(int x_value, int y_value, int z_value){
   };
   return c;
 }
+
+
+ coordinate_t scale_coordinate(int factor,coordinate_t c){
+  c.x *=factor;
+  c.z *=factor;
+  c.y *=factor;
+
+  return c;
+}
+
+
+
+
+
+
+  
+
+
+  
+
