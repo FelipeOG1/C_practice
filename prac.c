@@ -1,36 +1,101 @@
-#include <stdio.h>
 #include <stdlib.h>
 
+#include <stdio.h>
 
-typedef struct Node{
-  int value;
-  struct Node *next;
 
-}Node;
 
-typedef struct{
+ typedef struct stack{
 
-  Node head;
-  Node tail;
+  int size;
+
+
+  int top_value;
+
+
+  int *arr;
+
+  uint8_t currentPos;
   
-}LinkedList;
 
 
-void addTotheEnd(LinkedList *lin,int val){
-  Node newNode={.value=val,.next=NULL};
 
-  lin->head.next=&newNode;
+}stack_t;
+
+
+
+stack_t * init_struct(int value){
+
+
+  stack_t *st = malloc(sizeof(stack_t));
+
+
+  st->size = value;
+
+  st->arr = malloc(value * sizeof(int));
+  
+
+  *st->arr  = 0;
+
+  if (!st->arr){
+
+    return NULL;
+  }
+
+    
+   
+
+   st->top_value = st->arr[0];
+
+  st->currentPos = 0;
+
+  return st;
+
+
+   
 }
 
+
+void push(stack_t *stack){
+
+  if(stack->currentPos + 1 == stack->size){
+
+     int *tmp_realloc= realloc(stack->arr,(stack->size * sizeof(int))*2);
+
+    if (!tmp_realloc){
+
+
+      printf("fallo el realloc");
+
+      exit(1);
+
+      
+    }
+
+    stack->arr = tmp_realloc;
+
+    stack->size *=2;
+
+    
+
+
+
+
+
+
+    
+  }
+
+  
+
+}
+
+
 int main(){
- 
+  
+  stack_t * stack = init_struct(10);
 
- Node Node1 = {.value = 10};
- Node Node2={.value=20};
-
-
-
-
+   
+  
 
   return 0;
 }
