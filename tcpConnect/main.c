@@ -4,24 +4,26 @@
 #include <arpa/inet.h>
 #include <string.h>
  
-
+#define PORT 2000
 int main(int args,char *argv[]){
-  struct sockaddr_in sa;
+   
+  struct sockaddr as;
+  struct sockaddr_in si;
+
+  si.sin_family = AF_INET;
+
+
+
+  inet_pton(si.sin_family,"",(&si.sin_addr));
   
-  const char *p = "192.168.1.1";
+  memset(&si.sin_zero,0,sizeof(si.sin_zero));
 
-  memset(&sa,0,sizeof(sa));
+  u_int32_t num = htonl(si.sin_addr.s_addr);
 
-  sa.sin_port=10;
-
-  
-
-  printf("%hu",sa.sin_port);
-
-  
+  printf("resultado hexadecimal 0x%X",num);
+ 
+   
 
 
-
-  
   return 0;
 }
