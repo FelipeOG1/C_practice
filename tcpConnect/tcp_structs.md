@@ -58,3 +58,15 @@ int64_t __ss_align;
 char __ss_pad2[_SS_PAD2SIZE];
 };
 
+
+
+int getaddrinfo(const char *node, // e.g. "www.example.com" or IP
+const char *service, // e.g. "http" or port number'
+
+const struct addrinfo *hints,//AI_FAMILY TIPO DE SOCKET,ETC.
+struct addrinfo **res);//Puntero a lista enlazada.
+
+
+
+
+
